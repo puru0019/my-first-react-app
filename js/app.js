@@ -1,10 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Grid,Row,Col } from 'react-bootstrap';
+import '../css/app.css';
+import '../css/utility.css'
 
 
 const Hello = () => {
   return (
-    <h1>This is react Application</h1>
+    <div>
+      <Gridcontainer />
+    </div>
+  )
+}
+
+const Gridcontainer = () => {
+  return (
+    <Grid className="marginLarge">
+      <Row>
+        <Col xs={12}>Display Content Here</Col>
+      </Row>
+    </Grid>
   )
 }
 
