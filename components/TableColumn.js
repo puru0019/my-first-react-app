@@ -1,17 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TableButton from './TableButton.js';
-const TableColumn = (props) => {
-
+const TableColumn = ({ cellData }) => {
   return (
-
-          <tr>
-            <td>{props.tableContent.Month}</td>
-            <td>{props.tableContent.Expenses}</td>
-            <TableButton text="Edit"/>
-            <TableButton text="Delete"/>
-          </tr>
-
+  	<td>{cellData}</td>
   )
 }
 

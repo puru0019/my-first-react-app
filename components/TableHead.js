@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const TableHead = (props) => {
-  console.log(props.headerContent);
+const TableHead = ({ headerProps }) => {
   return (
     <thead>
       <tr>
-        <th>{props.headerContent.monthLabel}</th>
-        <th>{props.headerContent.expenseLabel}</th>
-        <th>{props.headerContent.actionLabel}</th>
+        <th>{headerProps.monthLabel}</th>
+        <th>{headerProps.expenseLabel}</th>
+        <th>{headerProps.actionLabel}</th>
       </tr>
     </thead>
   )

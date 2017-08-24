@@ -1,64 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TableButton from '../components/TableButton.js';
-import Table from '../components/Table.js';
+import TableComponent from '../components/Table.js';
 import { Grid,Row,Col } from 'react-bootstrap';
-import '../css/app.css';
-import '../css/utility.css'
+// import '../css/app.css';
+// import '../css/utility.css'
 
-var tableData =
-{
-  "buttonLabels":{"addButton":"Add","deleteButton":"Delete","editButton":"Edit"},
-  "tableHeader":{"monthLabel":"Month","expenseLabel":"Expenses","actionLabel":"Action"},
-  "data":[
-      {
-      "Month":"January",
-      "Expenses":21
-      },
-      {
-      "Month":"March",
-      "Expenses":27
-      },
-      {
-      "Month":"April",
-      "Expenses":25
-      },
-  ]
-};
+import tableData from './data';
 
-const Hello = () => {
-  return (
-    <div>
-      <Gridcontainer />
-    </div>
-  )
-}
-
-const SectionHeader = (props) => {
-  return (
-    <div className="section-header">
-      <h4>{props.text}</h4>
-    </div>
-  )
-}
-
-const Gridcontainer = () => {
-  const tableButtonLabel = tableData.buttonLabels;
-  return (
-    <Grid className="marginLarge">
-      <Row>
-        <Col xs={12}>
-          <TableButton text={tableButtonLabel.addButton}/>
-        </Col>
-        <Col xs={12}>
-          <Table content={tableData}/>
-        </Col>
-      </Row>
-    </Grid>
-  )
-}
+const App = () => (
+  <div>
+    <h1>Table Example</h1>
+    <TableComponent content={tableData} />
+  </div>
+)
 
 ReactDOM.render(
-  <Hello />,
+  <App />,
   document.getElementById('mount')
 );

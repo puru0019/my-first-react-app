@@ -1,17 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TableColumn from './TableColumn.js'
-import TableHead from './TableHead.js';
+import TableColumn from './TableColumn'
+import TableHead from './TableHead';
+import TableButton from './TableButton';
 
-const TableRow = (props) => {
-  console.log(props.rowContent);
+const TableRow = ({ rowData }) => {
   return (
-    <tbody>
-      {props.rowContent.map((data) => {
-          <TableColumn tableContent={data}/>
-      })}
-    </tbody>
-  )
+  	<tr>
+  		{
+  			Object.keys(rowData).map(function(key, index) {
+  				return <TableColumn cellData={rowData[key]} key={index} />
+			})
+		}
+		<td>
+			<TableButton text='Edit' />
+			<TableButton text='Delete' />
+		</td>
+  	</tr>
+  );
 }
 
 export default TableRow;

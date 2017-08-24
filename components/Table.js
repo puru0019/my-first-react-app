@@ -3,16 +3,21 @@ import ReactDOM from 'react-dom';
 import TableHead from './TableHead.js';
 import TableRow from './TableRow.js';
 
-const Table = (props) => {
-  //console.log(props.content.tableHeader);
-  const tableHeaderContent = props.content.tableHeader;
-  const tableRowContent = props.content.data;
-  return (
-    <table className="table expensesTable mtl">
-      <TableHead headerContent={tableHeaderContent}/>
-      <TableRow rowContent={tableRowContent}/>
-    </table>
-  )
+class Table extends React.Component {
+
+	render() {
+		const renderTableRows = this.props.content.data.map((row, index) => {
+			return <TableRow rowData={row} key={index} />
+		})
+		return (
+			<table>
+				<TableHead headerProps={this.props.content.tableHeader} />
+				<tbody>
+					{renderTableRows}
+				</tbody>
+			</table>
+		)
+	}
 }
 
 export default Table;
