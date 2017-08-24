@@ -10,7 +10,7 @@ class Table extends React.Component {
 			return <TableRow rowData={row} key={index} />
 		})
 		return (
-			<table>
+			<table className="table expensesTable mtl">
 				<TableHead headerProps={this.props.content.tableHeader} />
 				<tbody>
 					{renderTableRows}

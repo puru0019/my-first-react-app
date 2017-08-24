@@ -13,8 +13,8 @@ const TableRow = ({ rowData }) => {
 			})
 		}
 		<td>
-			<TableButton text='Edit' />
-			<TableButton text='Delete' />
+			<TableButton text='Edit' buttonStyle='info'/>
+			<TableButton text='Delete' buttonStyle='danger' rowClass='mlm'/>
 		</td>
   	</tr>
   );
