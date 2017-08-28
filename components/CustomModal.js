@@ -10,6 +10,7 @@ import {
 } from 'react-modal-bootstrap';
 
 class CustomModal extends React.Component {
+  //const data={};
   constructor(props) {
     super(props);
   }
@@ -22,13 +23,24 @@ class CustomModal extends React.Component {
           <ModalTitle>Modal title</ModalTitle>
         </ModalHeader>
         <ModalBody>
-          <p>Modal Body</p>
+        <div className="row">
+          <div className="col-xs-12 col-lg-4">
+            <div className="form-group">
+              <label className="control-label" for="month">Enter Month</label>
+              <input type="text" className="form-control" name="Month" id="month" value={this.props.handleData.Month} onChange={this.props.handleChange}/>
+            </div>
+            <div className="form-group">
+              <label className="control-label" for="expenses">Enter Expenses</label>
+              <input type="text" className="form-control" name="Expenses" id="expenses" value={this.props.handleData.Expenses} onChange={this.props.handleChange}/>
+            </div>
+          </div>
+        </div>
         </ModalBody>
         <ModalFooter>
           <button className='btn btn-default' onClick={this.props.onRequestHide}>
             Close
           </button>
-          <button className='btn btn-primary'>
+          <button className='btn btn-primary' onClick={this.props.onUpdate}>
             Save changes
           </button>
         </ModalFooter>
